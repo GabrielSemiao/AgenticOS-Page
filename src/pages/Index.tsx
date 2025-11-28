@@ -2,6 +2,7 @@
 
 import { EnterpriseHero } from "@/components/enterprise-hero";
 import { DashboardReveal } from "@/components/dashboard-reveal";
+import { LiveDemo } from "@/components/live-demo";
 import { FinancialEcosystem } from "@/components/financial-ecosystem";
 import { EnterpriseBento } from "@/components/enterprise-bento";
 import { EnterpriseFooter } from "@/components/enterprise-footer";
@@ -11,6 +12,7 @@ const Index = () => {
     <div className="min-h-screen bg-[#050505] text-white font-light">
       <EnterpriseHero />
       <DashboardReveal />
+      <LiveDemo />
       <FinancialEcosystem />
       <EnterpriseBento />
       <EnterpriseFooter />
