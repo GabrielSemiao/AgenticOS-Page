@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Check, CheckCheck } from "lucide-react";
+import { CheckCheck } from "lucide-react";
 
 export const LiveDemo = () => {
   const [messages, setMessages] = useState<Array<{ text: string; isBot: boolean; time: string }>>([]);
@@ -17,20 +17,28 @@ export const LiveDemo = () => {
 
   useEffect(() => {
     let currentIndex = 0;
-    const interval = setInterval(() => {
+    
+    const addMessage = () => {
       if (currentIndex < conversation.length) {
         setIsTyping(true);
+        
         setTimeout(() => {
           setMessages((prev) => [...prev, conversation[currentIndex]]);
           setIsTyping(false);
           currentIndex++;
+          
+          if (currentIndex < conversation.length) {
+            setTimeout(addMessage, 2000);
+          }
         }, 1500);
-      } else {
-        clearInterval(interval);
       }
-    }, 3000);
+    };
 
-    return () => clearInterval(interval);
+    const timer = setTimeout(addMessage, 500);
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
 
   return (
