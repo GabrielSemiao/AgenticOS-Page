@@ -1,23 +1,19 @@
 "use client";
 
-import { HeroSection } from "@/components/hero-section";
-import { SocialProof } from "@/components/social-proof";
-import { ProblemSolution } from "@/components/problem-solution";
-import { FeaturesBento } from "@/components/features-bento";
-import { LiveDemo } from "@/components/live-demo";
-import { Pricing } from "@/components/pricing";
-import { Footer } from "@/components/footer";
+import { EnterpriseHero } from "@/components/enterprise-hero";
+import { DashboardReveal } from "@/components/dashboard-reveal";
+import { FinancialEcosystem } from "@/components/financial-ecosystem";
+import { EnterpriseBento } from "@/components/enterprise-bento";
+import { EnterpriseFooter } from "@/components/enterprise-footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white">
-      <HeroSection />
-      <SocialProof />
-      <ProblemSolution />
-      <FeaturesBento />
-      <LiveDemo />
-      <Pricing />
-      <Footer />
+    <div className="min-h-screen bg-[#050505] text-white font-light">
+      <EnterpriseHero />
+      <DashboardReveal />
+      <FinancialEcosystem />
+      <EnterpriseBento />
+      <EnterpriseFooter />
     </div>
   );
 };
