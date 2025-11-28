@@ -1,43 +1,57 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CheckCheck } from "lucide-react";
 
+type ChatMessage = { text: string; isBot: boolean; time: string };
+
 export const LiveDemo = () => {
-  const [messages, setMessages] = useState<Array<{ text: string; isBot: boolean; time: string }>>([]);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [isTyping, setIsTyping] = useState(false);
 
-  const conversation = [
+  const conversation: ChatMessage[] = [
     { text: "Olá! Gostaria de agendar um horário", isBot: false, time: "14:23" },
     { text: "Olá! Claro, posso te ajudar com isso. Para qual dia você gostaria de agendar?", isBot: true, time: "14:23" },
     { text: "Amanhã às 15h está disponível?", isBot: false, time: "14:24" },
     { text: "Perfeito! Confirmei seu agendamento para amanhã às 15h. Você receberá um lembrete 1 hora antes. Posso ajudar com mais alguma coisa?", isBot: true, time: "14:24" },
   ];
 
-  useEffect(() => {
-    let currentIndex = 0;
-    
-    const addMessage = () => {
-      if (currentIndex < conversation.length) {
-        setIsTyping(true);
-        
-        setTimeout(() => {
-          setMessages((prev) => [...prev, conversation[currentIndex]]);
-          setIsTyping(false);
-          currentIndex++;
-          
-          if (currentIndex < conversation.length) {
-            setTimeout(addMessage, 2000);
-          }
-        }, 1500);
-      }
-    };
+  const indexRef = useRef(0);
+  const timeoutsRef = useRef<number[]>([]);
 
-    const timer = setTimeout(addMessage, 500);
+  const scheduleNext = (typingDelayMs: number) => {
+    if (indexRef.current >= conversation.length) {
+      setIsTyping(false);
+      return;
+    }
+    setIsTyping(true);
+    const id = window.setTimeout(() => {
+      const idx = indexRef.current;
+      const msg = conversation[idx];
+      if (msg) {
+        setMessages((prev) => [...prev, msg]);
+      }
+      indexRef.current = idx + 1;
+      setIsTyping(false);
+
+      if (indexRef.current < conversation.length) {
+        // Aguarda uma pausa entre mensagens e inicia nova digitação
+        const gapId = window.setTimeout(() => scheduleNext(1500), 2000);
+        timeoutsRef.current.push(gapId);
+      }
+    }, typingDelayMs);
+    timeoutsRef.current.push(id);
+  };
+
+  useEffect(() => {
+    // start: pequena espera e inicia a primeira digitação
+    const startId = window.setTimeout(() => scheduleNext(1500), 500);
+    timeoutsRef.current.push(startId);
 
     return () => {
-      clearTimeout(timer);
+      timeoutsRef.current.forEach((t) => clearTimeout(t));
+      timeoutsRef.current = [];
     };
   }, []);
 
@@ -78,7 +92,13 @@ export const LiveDemo = () => {
             </div>
 
             {/* Messages */}
-            <div className="p-4 space-y-3 min-h-[400px] bg-[#0A0A0A]" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')" }}>
+            <div
+              className="p-4 space-y-3 min-h-[400px] bg-[#0A0A0A]"
+              style={{
+                backgroundImage:
+                  "url('data:image/svg+xml,%3Csvg width=%2760%27 height=%2760%27 viewBox=%270 0 60 60%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27none%27 fill-rule=%27evenodd%27%3E%3Cg fill=%27%23ffffff%27 fill-opacity=%270.02%27%3E%3Cpath d=%27M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%27/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')",
+              }}
+            >
               {messages.map((message, index) => (
                 <motion.div
                   key={index}
@@ -103,11 +123,7 @@ export const LiveDemo = () => {
               ))}
 
               {isTyping && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="flex justify-start"
-                >
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex justify-start">
                   <div className="bg-gray-800 rounded-lg p-3">
                     <div className="flex gap-1">
                       <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
