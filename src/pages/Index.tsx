@@ -4,6 +4,7 @@ import { EnterpriseHero } from "@/components/enterprise-hero";
 import { DashboardReveal } from "@/components/dashboard-reveal";
 import { LiveDemo } from "@/components/live-demo";
 import { FeaturesBento } from "@/components/features-bento";
+import { Pricing } from "@/components/pricing";
 import { FinancialEcosystem } from "@/components/financial-ecosystem";
 import { EnterpriseBento } from "@/components/enterprise-bento";
 import { EnterpriseFooter } from "@/components/enterprise-footer";
@@ -15,6 +16,7 @@ const Index = () => {
       <DashboardReveal />
       <LiveDemo />
       <FeaturesBento />
+      <Pricing />
       <FinancialEcosystem />
       <EnterpriseBento />
       <EnterpriseFooter />

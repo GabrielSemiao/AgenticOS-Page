@@ -7,39 +7,38 @@ import { Check, Sparkles } from "lucide-react";
 export const Pricing = () => {
   const plans = [
     {
-      name: "Mensal",
-      price: "497",
+      name: "Explorer",
+      price: "197",
       period: "/mês",
-      description: "Perfeito para começar",
+      description: "O Básico",
       features: [
-        "Atendimento WhatsApp ilimitado",
-        "Agendamento automático",
-        "Vendas via Pix",
-        "CRM integrado",
-        "Suporte prioritário",
+        "Agente de Vendas Básico",
+        "Integração Pix",
+        "Suporte por Email",
       ],
       popular: false,
     },
     {
-      name: "Anual",
-      price: "397",
-      period: "/mês",
-      description: "Economize 20% pagando anualmente",
+      name: "Enterprise Pro",
+      price: "1.897",
+      originalPrice: "2.364",
+      period: "/ano",
+      installments: "12x de R$ 189,00",
+      description: "O No-Brainer",
       features: [
-        "Tudo do plano Mensal",
-        "2 meses grátis",
-        "Treinamento personalizado",
-        "Integrações premium",
-        "Suporte VIP 24/7",
-        "Relatórios avançados",
+        "Tudo do Explorer",
+        "Prioridade na Fila de Processamento",
+        "Treinamento Personalizado do Agente",
+        "Suporte WhatsApp VIP",
       ],
       popular: true,
-      badge: "Mais Popular",
+      badge: "MAIS POPULAR",
+      savings: "Economia de R$ 467/ano",
     },
   ];
 
   return (
-    <section className="py-32 px-4">
+    <section className="py-32 px-4 bg-[#050505]">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,15 +46,14 @@ export const Pricing = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-            Invista no Futuro do Seu Negócio
+          <h2 className="text-4xl md:text-6xl font-light text-white mb-6 tracking-tight">
+            Mais barato que um estagiário.
+            <br />
+            Mais eficiente que um gerente.
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Escolha o plano ideal e comece a escalar hoje mesmo
-          </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <motion.div
               key={index}
@@ -63,15 +61,15 @@ export const Pricing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              className={`relative p-8 rounded-2xl backdrop-blur-sm ${
+              className={`relative p-8 rounded-lg backdrop-blur-sm ${
                 plan.popular
-                  ? "bg-gradient-to-br from-purple-950/50 to-blue-900/30 border-2 border-purple-500/50"
-                  : "bg-gradient-to-br from-gray-900/50 to-gray-800/30 border border-gray-700/50"
+                  ? "bg-zinc-900/80 border-2 border-purple-500 shadow-[0_0_40px_rgba(168,85,247,0.3)]"
+                  : "bg-zinc-900/50 border border-white/10"
               }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
+                  <div className="bg-gradient-to-r from-purple-600 to-purple-500 text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center gap-1 shadow-lg">
                     <Sparkles className="w-4 h-4" />
                     {plan.badge}
                   </div>
@@ -79,38 +77,61 @@ export const Pricing = () => {
               )}
 
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold mb-2 text-white">{plan.name}</h3>
-                <p className="text-gray-400 text-sm mb-4">{plan.description}</p>
+                <h3 className="text-2xl font-light text-white mb-2 tracking-tight">{plan.name}</h3>
+                <p className="text-zinc-500 text-sm mb-6">{plan.description}</p>
+                
+                <div className="flex items-baseline justify-center gap-2 mb-2">
+                  {plan.originalPrice && (
+                    <span className="text-zinc-600 text-xl line-through">R$ {plan.originalPrice}</span>
+                  )}
+                </div>
+                
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-gray-400 text-xl">R$</span>
-                  <span className="text-5xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                  <span className="text-zinc-400 text-xl">R$</span>
+                  <span className={`text-5xl font-light ${
+                    plan.popular 
+                      ? "bg-gradient-to-r from-purple-400 to-purple-200 bg-clip-text text-transparent" 
+                      : "text-white"
+                  }`}>
                     {plan.price}
                   </span>
-                  <span className="text-gray-400">{plan.period}</span>
+                  <span className="text-zinc-400">{plan.period}</span>
                 </div>
+                
+                {plan.installments && (
+                  <p className="text-zinc-500 text-sm mt-2">{plan.installments}</p>
+                )}
               </div>
 
               <div className="space-y-4 mb-8">
                 {plan.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-start gap-3">
                     <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
-                      plan.popular ? "bg-purple-500/20" : "bg-gray-700/50"
+                      plan.popular ? "bg-purple-500/20 border border-purple-500/30" : "bg-zinc-800 border border-zinc-700"
                     }`}>
-                      <Check className={`w-3 h-3 ${plan.popular ? "text-purple-400" : "text-gray-400"}`} />
+                      <Check className={`w-3 h-3 ${plan.popular ? "text-purple-400" : "text-zinc-400"}`} />
                     </div>
-                    <span className="text-gray-300">{feature}</span>
+                    <span className="text-zinc-300 font-light">{feature}</span>
                   </div>
                 ))}
               </div>
 
+              {plan.savings && (
+                <div className="mb-6 text-center">
+                  <span className="inline-block bg-green-500/10 border border-green-500/30 text-green-400 px-4 py-2 rounded-full text-sm font-light">
+                    {plan.savings}
+                  </span>
+                </div>
+              )}
+
               <Button
-                className={`w-full py-6 text-lg rounded-xl ${
+                className={`w-full py-6 text-lg rounded-lg font-medium transition-all duration-300 ${
                   plan.popular
-                    ? "bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white"
-                    : "bg-gray-800 hover:bg-gray-700 text-white border border-gray-700"
+                    ? "bg-white text-black hover:bg-zinc-100 shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]"
+                    : "bg-transparent border-2 border-white/20 text-white hover:bg-white/5 hover:border-white/30"
                 }`}
               >
-                Começar Agora
+                {plan.popular ? "Quero Escalar Agora" : "Começar Mensal"}
               </Button>
             </motion.div>
           ))}
@@ -120,9 +141,9 @@ export const Pricing = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center text-gray-500 mt-8 text-sm"
+          className="text-center text-zinc-500 mt-12 text-sm font-light"
         >
-          Garantia de 7 dias. Cancele quando quiser.
+          Garantia de 7 dias. Cancele quando quiser. Sem pegadinhas.
         </motion.p>
       </div>
     </section>
