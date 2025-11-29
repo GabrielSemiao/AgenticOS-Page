@@ -101,80 +101,95 @@ export const LiveDemo = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex justify-center relative"
+            className="flex justify-center relative min-h-[800px] md:min-h-[650px]"
           >
-            {/* Card 1 - Quebra de Objeções (Top Left) */}
+            {/* Card 1 - Quebra de Objeções */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
-              className="absolute -left-8 top-20 z-20 hidden lg:block"
+              className="absolute -top-4 left-0 md:-left-8 md:top-20 z-20 scale-[0.85] md:scale-100"
             >
               <div className="relative">
-                {/* Connection Line */}
-                <svg className="absolute left-full top-1/2 w-24 h-1" style={{ transform: 'translateY(-50%)' }}>
+                {/* Connection Line - Desktop */}
+                <svg className="absolute left-full top-1/2 w-12 md:w-24 h-1 hidden md:block" style={{ transform: 'translateY(-50%)' }}>
                   <line x1="0" y1="0" x2="96" y2="0" stroke="#7c3aed" strokeWidth="1" strokeDasharray="4 4" />
                 </svg>
                 
-                <div className="bg-black/60 backdrop-blur-md border border-purple-500/30 rounded-lg p-4 w-48">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Zap className="w-4 h-4 text-purple-400" />
-                    <h4 className="text-sm font-mono text-purple-400">Quebra de Objeções</h4>
+                {/* Connection Line - Mobile */}
+                <svg className="absolute left-1/2 top-full w-1 h-12 md:hidden" style={{ transform: 'translateX(-50%)' }}>
+                  <line x1="0" y1="0" x2="0" y2="48" stroke="#7c3aed" strokeWidth="1" strokeDasharray="4 4" />
+                </svg>
+                
+                <div className="bg-black/60 backdrop-blur-md border border-purple-500/30 rounded-lg p-3 md:p-4 w-40 md:w-48">
+                  <div className="flex items-center gap-2 mb-1 md:mb-2">
+                    <Zap className="w-3 h-3 md:w-4 md:h-4 text-purple-400" />
+                    <h4 className="text-xs md:text-sm font-mono text-purple-400">Quebra de Objeções</h4>
                   </div>
-                  <p className="text-xs text-zinc-400 font-light leading-relaxed">
+                  <p className="text-[10px] md:text-xs text-zinc-400 font-light leading-relaxed">
                     IA identifica resistência e usa gatilhos mentais.
                   </p>
                 </div>
               </div>
             </motion.div>
 
-            {/* Card 2 - Checkout Nativo (Right Middle) */}
+            {/* Card 2 - Checkout Nativo */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.8 }}
-              className="absolute -right-8 top-1/2 -translate-y-1/2 z-20 hidden lg:block"
+              className="absolute right-0 top-1/3 md:-right-8 md:top-1/2 md:-translate-y-1/2 z-20 scale-[0.85] md:scale-100"
             >
               <div className="relative">
-                {/* Connection Line */}
-                <svg className="absolute right-full top-1/2 w-24 h-1" style={{ transform: 'translateY(-50%)' }}>
+                {/* Connection Line - Desktop */}
+                <svg className="absolute right-full top-1/2 w-12 md:w-24 h-1 hidden md:block" style={{ transform: 'translateY(-50%)' }}>
                   <line x1="0" y1="0" x2="96" y2="0" stroke="#06b6d4" strokeWidth="1" strokeDasharray="4 4" />
                 </svg>
                 
-                <div className="bg-black/60 backdrop-blur-md border border-cyan-500/30 rounded-lg p-4 w-48">
-                  <div className="flex items-center gap-2 mb-2">
-                    <CreditCard className="w-4 h-4 text-cyan-400" />
-                    <h4 className="text-sm font-mono text-cyan-400">Checkout Nativo</h4>
+                {/* Connection Line - Mobile */}
+                <svg className="absolute right-1/2 top-1/2 w-12 h-1 md:hidden" style={{ transform: 'translate(50%, -50%)' }}>
+                  <line x1="0" y1="0" x2="48" y2="0" stroke="#06b6d4" strokeWidth="1" strokeDasharray="4 4" />
+                </svg>
+                
+                <div className="bg-black/60 backdrop-blur-md border border-cyan-500/30 rounded-lg p-3 md:p-4 w-40 md:w-48">
+                  <div className="flex items-center gap-2 mb-1 md:mb-2">
+                    <CreditCard className="w-3 h-3 md:w-4 md:h-4 text-cyan-400" />
+                    <h4 className="text-xs md:text-sm font-mono text-cyan-400">Checkout Nativo</h4>
                   </div>
-                  <p className="text-xs text-zinc-400 font-light leading-relaxed">
+                  <p className="text-[10px] md:text-xs text-zinc-400 font-light leading-relaxed">
                     Gera código Pix e valida pagamento em tempo real.
                   </p>
                 </div>
               </div>
             </motion.div>
 
-            {/* Card 3 - Entrega Instantânea (Bottom Left) */}
+            {/* Card 3 - Entrega Instantânea */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 1.0 }}
-              className="absolute -left-8 bottom-20 z-20 hidden lg:block"
+              className="absolute -bottom-4 left-0 md:-left-8 md:bottom-20 z-20 scale-[0.85] md:scale-100"
             >
               <div className="relative">
-                {/* Connection Line */}
-                <svg className="absolute left-full top-1/2 w-24 h-1" style={{ transform: 'translateY(-50%)' }}>
+                {/* Connection Line - Desktop */}
+                <svg className="absolute left-full top-1/2 w-12 md:w-24 h-1 hidden md:block" style={{ transform: 'translateY(-50%)' }}>
                   <line x1="0" y1="0" x2="96" y2="0" stroke="#10b981" strokeWidth="1" strokeDasharray="4 4" />
                 </svg>
                 
-                <div className="bg-black/60 backdrop-blur-md border border-green-500/30 rounded-lg p-4 w-48">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Unlock className="w-4 h-4 text-green-400" />
-                    <h4 className="text-sm font-mono text-green-400">Entrega Instantânea</h4>
+                {/* Connection Line - Mobile */}
+                <svg className="absolute left-1/2 bottom-full w-1 h-12 md:hidden" style={{ transform: 'translateX(-50%)' }}>
+                  <line x1="0" y1="0" x2="0" y2="48" stroke="#10b981" strokeWidth="1" strokeDasharray="4 4" />
+                </svg>
+                
+                <div className="bg-black/60 backdrop-blur-md border border-green-500/30 rounded-lg p-3 md:p-4 w-40 md:w-48">
+                  <div className="flex items-center gap-2 mb-1 md:mb-2">
+                    <Unlock className="w-3 h-3 md:w-4 md:h-4 text-green-400" />
+                    <h4 className="text-xs md:text-sm font-mono text-green-400">Entrega Instantânea</h4>
                   </div>
-                  <p className="text-xs text-zinc-400 font-light leading-relaxed">
+                  <p className="text-[10px] md:text-xs text-zinc-400 font-light leading-relaxed">
                     O sistema libera acesso/login no mesmo segundo.
                   </p>
                 </div>
@@ -183,22 +198,22 @@ export const LiveDemo = () => {
 
             {/* Phone Mockup */}
             <div className="relative">
-              <div className="w-[320px] h-[650px] bg-zinc-950 rounded-[3rem] border-[14px] border-zinc-900 shadow-2xl relative overflow-hidden">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-zinc-950 rounded-b-3xl z-10"></div>
+              <div className="w-[280px] md:w-[320px] h-[570px] md:h-[650px] bg-zinc-950 rounded-[2.5rem] md:rounded-[3rem] border-[12px] md:border-[14px] border-zinc-900 shadow-2xl relative overflow-hidden">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 md:w-40 h-6 md:h-7 bg-zinc-950 rounded-b-3xl z-10"></div>
 
                 <div className="h-full flex flex-col bg-[#0A0A0A]">
-                  <div className="bg-gradient-to-r from-green-600/90 to-green-700/90 backdrop-blur-sm p-4 pt-8 flex items-center gap-3 border-b border-green-800/30">
-                    <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white font-semibold text-sm">
+                  <div className="bg-gradient-to-r from-green-600/90 to-green-700/90 backdrop-blur-sm p-3 md:p-4 pt-7 md:pt-8 flex items-center gap-3 border-b border-green-800/30">
+                    <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/20 flex items-center justify-center text-white font-semibold text-xs md:text-sm">
                       AI
                     </div>
                     <div>
-                      <div className="text-white font-medium text-sm">AgenticOS</div>
-                      <div className="text-green-100 text-xs">online</div>
+                      <div className="text-white font-medium text-xs md:text-sm">AgenticOS</div>
+                      <div className="text-green-100 text-[10px] md:text-xs">online</div>
                     </div>
                   </div>
 
                   <div
-                    className="flex-1 p-4 space-y-3 overflow-y-auto"
+                    className="flex-1 p-3 md:p-4 space-y-2 md:space-y-3 overflow-y-auto"
                     style={{
                       backgroundImage:
                         "url('data:image/svg+xml,%3Csvg width=%2760%27 height=%2760%27 viewBox=%270 0 60 60%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27none%27 fill-rule=%27evenodd%27%3E%3Cg fill=%27%23ffffff%27 fill-opacity=%270.02%27%3E%3Cpath d=%27M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%27/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')",
@@ -212,16 +227,16 @@ export const LiveDemo = () => {
                         className={`flex ${message.isBot ? "justify-start" : "justify-end"}`}
                       >
                         <div
-                          className={`max-w-[75%] rounded-lg p-3 ${
+                          className={`max-w-[75%] rounded-lg p-2 md:p-3 ${
                             message.isBot
                               ? "bg-zinc-800/90 backdrop-blur-sm text-white"
                               : "bg-gradient-to-r from-green-600/90 to-green-700/90 backdrop-blur-sm text-white"
                           }`}
                         >
-                          <p className="text-sm leading-relaxed">{message.text}</p>
+                          <p className="text-xs md:text-sm leading-relaxed">{message.text}</p>
                           <div className="flex items-center justify-end gap-1 mt-1">
-                            <span className="text-xs opacity-70">{message.time}</span>
-                            {!message.isBot && <CheckCheck className="w-3 h-3 text-green-200" />}
+                            <span className="text-[10px] md:text-xs opacity-70">{message.time}</span>
+                            {!message.isBot && <CheckCheck className="w-2.5 h-2.5 md:w-3 md:h-3 text-green-200" />}
                           </div>
                         </div>
                       </motion.div>
@@ -229,11 +244,11 @@ export const LiveDemo = () => {
 
                     {isTyping && (
                       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex justify-start">
-                        <div className="bg-zinc-800/90 backdrop-blur-sm rounded-lg p-3">
+                        <div className="bg-zinc-800/90 backdrop-blur-sm rounded-lg p-2 md:p-3">
                           <div className="flex gap-1">
-                            <div className="w-2 h-2 bg-zinc-500 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                            <div className="w-2 h-2 bg-zinc-500 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                            <div className="w-2 h-2 bg-zinc-500 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                            <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-zinc-500 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                            <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-zinc-500 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+                            <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-zinc-500 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
                           </div>
                         </div>
                       </motion.div>
