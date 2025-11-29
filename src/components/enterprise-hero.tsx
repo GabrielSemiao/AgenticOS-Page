@@ -1,18 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { DotScreenShader } from "@/components/ui/dot-shader-background";
+import { StarsBackground } from "@/components/ui/stars-background";
+import { ShootingStars } from "@/components/ui/shooting-stars";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 
 export const EnterpriseHero = () => {
   return (
-    <div className="h-svh w-screen flex flex-col gap-8 items-center justify-center relative overflow-hidden bg-[#050505]">
+    <div className="h-svh w-screen flex flex-col gap-8 items-center justify-center relative overflow-hidden bg-neutral-900">
+      {/* Deep Space Background */}
       <div className="absolute inset-0 z-0">
-        <DotScreenShader />
+        <StarsBackground />
       </div>
       
-      <div className="z-10 flex flex-col items-center gap-8 text-center px-6 md:px-4 mix-blend-exclusion">
+      {/* Shooting Stars Layer */}
+      <div className="absolute inset-0 z-10">
+        <ShootingStars />
+      </div>
+      
+      {/* Content */}
+      <div className="z-20 flex flex-col items-center gap-8 text-center px-6 md:px-4">
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
