@@ -5,13 +5,13 @@ import { Home, BarChart3, Settings, TrendingUp, Users, Zap, CheckCircle2 } from 
 
 export const DashboardPreview = () => {
   return (
-    <div className="w-full h-full bg-zinc-950 rounded-2xl overflow-hidden border border-white/5 shadow-2xl">
+    <div className="w-full h-full bg-transparent backdrop-blur-2xl rounded-[3rem] border border-white/10 shadow-[0_0_50px_-12px_rgba(124,58,237,0.5)] overflow-hidden">
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:14px_14px]" />
       
       <div className="relative flex h-full">
         {/* Sidebar */}
-        <div className="w-16 bg-zinc-900/80 backdrop-blur-xl border-r border-white/5 flex flex-col items-center py-6 gap-6">
+        <div className="w-16 bg-black/40 backdrop-blur-md border-r border-white/5 flex flex-col items-center py-6 gap-6">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-purple-500 flex items-center justify-center shadow-lg shadow-purple-500/30">
             <span className="text-white font-bold text-sm">A</span>
           </div>
@@ -26,14 +26,14 @@ export const DashboardPreview = () => {
             
             <motion.div
               whileHover={{ scale: 1.1 }}
-              className="w-10 h-10 rounded-lg bg-zinc-800/50 border border-white/5 flex items-center justify-center cursor-pointer hover:bg-zinc-700/50 transition-colors"
+              className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer hover:bg-white/10 hover:border-white/20 transition-all"
             >
               <BarChart3 className="w-5 h-5 text-zinc-400" />
             </motion.div>
             
             <motion.div
               whileHover={{ scale: 1.1 }}
-              className="w-10 h-10 rounded-lg bg-zinc-800/50 border border-white/5 flex items-center justify-center cursor-pointer hover:bg-zinc-700/50 transition-colors"
+              className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer hover:bg-white/10 hover:border-white/20 transition-all"
             >
               <Settings className="w-5 h-5 text-zinc-400" />
             </motion.div>
@@ -51,7 +51,10 @@ export const DashboardPreview = () => {
           {/* Bento Grid */}
           <div className="grid grid-cols-4 grid-rows-3 gap-4 h-[calc(100%-80px)]">
             {/* Card 1: Revenue - Large */}
-            <div className="col-span-2 row-span-2 bg-zinc-900/50 backdrop-blur-xl rounded-xl border border-white/5 p-6 relative overflow-hidden shadow-lg">
+            <motion.div
+              whileHover={{ borderColor: "rgba(99,102,241,0.5)", boxShadow: "0 0 20px rgba(99,102,241,0.3)" }}
+              className="col-span-2 row-span-2 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-xl rounded-xl border border-indigo-500/20 p-6 relative overflow-hidden transition-all duration-300"
+            >
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent" />
               <div className="relative z-10">
                 <div className="flex items-center gap-2 mb-2">
@@ -89,10 +92,13 @@ export const DashboardPreview = () => {
                   </svg>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 2: AI Performance - Vertical Bars */}
-            <div className="col-span-2 row-span-2 bg-zinc-900/50 backdrop-blur-xl rounded-xl border border-white/5 p-6 relative overflow-hidden shadow-lg">
+            <motion.div
+              whileHover={{ borderColor: "rgba(99,102,241,0.5)", boxShadow: "0 0 20px rgba(99,102,241,0.3)" }}
+              className="col-span-2 row-span-2 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-xl rounded-xl border border-indigo-500/20 p-6 relative overflow-hidden transition-all duration-300"
+            >
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5" />
               <div className="relative z-10">
                 <div className="flex items-center gap-2 mb-2">
@@ -113,16 +119,19 @@ export const DashboardPreview = () => {
                       className="flex-1 bg-gradient-to-t from-purple-600 to-blue-500 rounded-t-lg relative group"
                     >
                       <div className="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span className="text-xs text-white bg-zinc-800 px-2 py-1 rounded">{height}%</span>
+                        <span className="text-xs text-white bg-black/60 backdrop-blur-sm px-2 py-1 rounded border border-white/10">{height}%</span>
                       </div>
                     </motion.div>
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 3: Recent Activity */}
-            <div className="col-span-2 row-span-1 bg-zinc-900/50 backdrop-blur-xl rounded-xl border border-white/5 p-6 relative overflow-hidden shadow-lg">
+            <motion.div
+              whileHover={{ borderColor: "rgba(99,102,241,0.5)", boxShadow: "0 0 20px rgba(99,102,241,0.3)" }}
+              className="col-span-2 row-span-1 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-xl rounded-xl border border-indigo-500/20 p-6 relative overflow-hidden transition-all duration-300"
+            >
               <div className="flex items-center gap-2 mb-4">
                 <Users className="w-4 h-4 text-cyan-400" />
                 <span className="text-xs text-zinc-500 uppercase tracking-wider">Recent Activity</span>
@@ -141,7 +150,7 @@ export const DashboardPreview = () => {
                     transition={{ delay: i * 0.1 }}
                     className="flex items-center gap-3"
                   >
-                    <div className={`w-8 h-8 rounded-full ${item.color} flex items-center justify-center text-white text-xs font-semibold`}>
+                    <div className={`w-8 h-8 rounded-full ${item.color} flex items-center justify-center text-white text-xs font-semibold shadow-lg`}>
                       {item.name.charAt(0)}
                     </div>
                     <div className="flex-1 min-w-0">
@@ -152,10 +161,13 @@ export const DashboardPreview = () => {
                   </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 4: System Status - Donut Chart */}
-            <div className="col-span-2 row-span-1 bg-zinc-900/50 backdrop-blur-xl rounded-xl border border-white/5 p-6 relative overflow-hidden shadow-lg">
+            <motion.div
+              whileHover={{ borderColor: "rgba(99,102,241,0.5)", boxShadow: "0 0 20px rgba(99,102,241,0.3)" }}
+              className="col-span-2 row-span-1 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-xl rounded-xl border border-indigo-500/20 p-6 relative overflow-hidden transition-all duration-300"
+            >
               <div className="flex items-center justify-between h-full">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
@@ -201,7 +213,7 @@ export const DashboardPreview = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
