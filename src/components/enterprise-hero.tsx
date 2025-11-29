@@ -12,12 +12,12 @@ export const EnterpriseHero = () => {
         <DotScreenShader />
       </div>
       
-      <div className="z-10 flex flex-col items-center gap-8 text-center px-4 mix-blend-exclusion">
+      <div className="z-10 flex flex-col items-center gap-8 text-center px-6 md:px-4 mix-blend-exclusion">
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-7xl md:text-9xl font-black tracking-tighter text-white pointer-events-none uppercase leading-[0.9]"
+          className="text-4xl sm:text-6xl md:text-9xl font-black tracking-tighter text-white pointer-events-none uppercase leading-[0.9]"
         >
           Sua Empresa.
           <br />
@@ -28,7 +28,7 @@ export const EnterpriseHero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="text-xl text-zinc-400 max-w-3xl leading-relaxed pointer-events-none"
+          className="text-base md:text-xl text-zinc-400 max-w-xs sm:max-w-xl md:max-w-3xl leading-relaxed pointer-events-none"
         >
           Não contrate mais funcionários, instale o AgenticOS. O primeiro Sistema Operacional que conecta WhatsApp, Bancos e CRM para vender, agendar e gerenciar sua empresa 24/7. Sem pausas, sem erros.
         </motion.p>
