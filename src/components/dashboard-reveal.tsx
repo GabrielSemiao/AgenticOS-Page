@@ -1,6 +1,7 @@
 "use client";
 
 import { ContainerScroll } from "@/components/ui/container-scroll";
+import { DashboardPreview } from "@/components/dashboard-preview";
 
 export const DashboardReveal = () => {
   return (
@@ -17,12 +18,7 @@ export const DashboardReveal = () => {
           </div>
         }
       >
-        <img
-          src="/dashboard-screenshot.png"
-          alt="AgenticOS Dashboard"
-          className="w-full h-full object-cover rounded-2xl"
-          draggable={false}
-        />
+        <DashboardPreview />
       </ContainerScroll>
     </div>
   );
