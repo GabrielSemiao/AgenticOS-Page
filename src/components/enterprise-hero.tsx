@@ -5,6 +5,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 
 export const EnterpriseHero = () => {
+  const scrollToPricing = () => {
+    document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="h-svh w-full relative flex flex-col items-center justify-center antialiased overflow-hidden">
       {/* Content - Z-20 */}
@@ -39,6 +43,7 @@ export const EnterpriseHero = () => {
         >
           <Button
             size="lg"
+            onClick={scrollToPricing}
             className="bg-white text-black hover:bg-zinc-100 rounded-sm px-8 py-6 text-base font-semibold shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] transition-all duration-300"
           >
             Iniciar Operação Agora
@@ -47,10 +52,17 @@ export const EnterpriseHero = () => {
           <Button
             size="lg"
             variant="outline"
+            asChild
             className="text-white border-white/30 hover:bg-white/5 hover:border-white/50 rounded-sm px-8 py-6 text-base font-medium transition-all duration-300"
           >
-            <Play className="mr-2 w-5 h-5" />
-            Ver o Agente Vendendo
+            <a
+              href="https://wa.me/5565999746141?text=Ol%C3%A1!%20Gostaria%20de%20ver%20uma%20demonstra%C3%A7%C3%A3o%20do%20AgenticOS%20funcionando."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Play className="mr-2 w-5 h-5" />
+              Ver o Agente Vendendo
+            </a>
           </Button>
         </motion.div>
       </div>

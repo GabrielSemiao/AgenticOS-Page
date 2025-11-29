@@ -17,6 +17,8 @@ export const Pricing = () => {
         "Suporte por Email",
       ],
       popular: false,
+      whatsappLink: "https://wa.me/5565999746141?text=Ol%C3%A1!%20Vi%20o%20site%20e%20tenho%20interesse%20no%20Plano%20Mensal%20(Explorer)%20do%20AgenticOS.",
+      buttonText: "Começar Mensal",
     },
     {
       name: "Enterprise Pro",
@@ -34,11 +36,13 @@ export const Pricing = () => {
       popular: true,
       badge: "MAIS POPULAR",
       savings: "Economia de R$ 467/ano",
+      whatsappLink: "https://wa.me/5565999746141?text=Ol%C3%A1!%20Quero%20aproveitar%20a%20oferta%20do%20Plano%20Anual%20(Enterprise)%20com%20desconto.",
+      buttonText: "Quero Escalar Agora",
     },
   ];
 
   return (
-    <section className="py-32 px-4 bg-transparent">
+    <section id="pricing" className="py-32 px-4 bg-transparent">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -125,13 +129,20 @@ export const Pricing = () => {
               )}
 
               <Button
+                asChild
                 className={`w-full py-6 text-lg rounded-lg font-medium transition-all duration-300 ${
                   plan.popular
                     ? "bg-white text-black hover:bg-zinc-100 shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]"
                     : "bg-transparent border-2 border-white/20 text-white hover:bg-white/5 hover:border-white/30"
                 }`}
               >
-                {plan.popular ? "Quero Escalar Agora" : "Começar Mensal"}
+                <a
+                  href={plan.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {plan.buttonText}
+                </a>
               </Button>
             </motion.div>
           ))}
