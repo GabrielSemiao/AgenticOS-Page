@@ -60,7 +60,7 @@ export const Header = ({ translate, titleComponent }: any) => {
       style={{
         translateY: translate,
       }}
-      className="div max-w-5xl mx-auto text-center mb-10 md:mb-20"
+      className="div max-w-5xl mx-auto text-center mb-20"
     >
       {titleComponent}
     </motion.div>
@@ -82,12 +82,15 @@ export const Card = ({
       style={{
         rotateX: rotate,
         scale,
+        // Sombra Roxa Holográfica intensa ao invés de sombra preta
         boxShadow:
-          "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
+          "0 0 150px -20px rgba(124, 58, 237, 0.5), 0 0 50px -10px rgba(124, 58, 237, 0.3)",
       }}
-      className="max-w-5xl mx-auto h-[50vh] sm:h-[30rem] md:h-[40rem] w-[95vw] md:w-full border-4 border-[#6C6C6C] p-1 md:p-6 bg-[#222222] rounded-[20px] md:rounded-[30px] shadow-2xl"
+      // AQUI ESTÁ A MÁGICA: Borda fina, Fundo Transparente, Blur Extremo
+      className="max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border border-white/10 p-2 md:p-6 bg-black/20 backdrop-blur-xl rounded-[30px]"
     >
-      <div className="h-full w-full overflow-hidden rounded-xl md:rounded-2xl bg-gray-100 p-1 md:p-4">
+      {/* O container interno agora é transparente para deixar o dashboard brilhar */}
+      <div className="h-full w-full overflow-hidden rounded-2xl bg-transparent md:rounded-2xl md:p-4">
         {children}
       </div>
     </motion.div>
