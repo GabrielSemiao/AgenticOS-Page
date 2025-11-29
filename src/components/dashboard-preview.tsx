@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Home, BarChart3, Settings, TrendingUp, Activity, Terminal, Server } from "lucide-react";
+import { Home, BarChart3, Settings, TrendingUp, Activity, Terminal, Server, MessageSquareText, UsersRound, Workflow } from "lucide-react";
 
 export const DashboardPreview = () => {
   return (
@@ -12,18 +12,20 @@ export const DashboardPreview = () => {
       <div className="relative flex h-full">
         {/* Sidebar */}
         <div className="w-16 bg-transparent border-r border-white/5 flex flex-col items-center py-6 gap-6">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-purple-500 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-500 flex items-center justify-center">
             <span className="text-white font-bold text-sm">A</span>
           </div>
           
           <div className="flex-1 flex flex-col gap-4">
+            {/* Home - Active */}
             <motion.div
               whileHover={{ scale: 1.1 }}
-              className="w-10 h-10 rounded-lg bg-purple-500/20 border border-purple-500/30 flex items-center justify-center cursor-pointer"
+              className="w-10 h-10 rounded-lg bg-emerald-500/10 border-l-2 border-emerald-400 flex items-center justify-center cursor-pointer relative"
             >
-              <Home className="w-5 h-5 text-purple-400" />
+              <Home className="w-5 h-5 text-emerald-400" />
             </motion.div>
             
+            {/* Analytics */}
             <motion.div
               whileHover={{ scale: 1.1 }}
               className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer hover:bg-white/10 transition-all"
@@ -31,6 +33,34 @@ export const DashboardPreview = () => {
               <BarChart3 className="w-5 h-5 text-zinc-400 hover:text-white transition-colors" />
             </motion.div>
             
+            {/* Messages/Chats */}
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer hover:bg-white/10 transition-all"
+            >
+              <MessageSquareText className="w-5 h-5 text-zinc-400 hover:text-white transition-colors" />
+            </motion.div>
+            
+            {/* CRM/Users */}
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer hover:bg-white/10 transition-all"
+            >
+              <UsersRound className="w-5 h-5 text-zinc-400 hover:text-white transition-colors" />
+            </motion.div>
+            
+            {/* Workflows/Automations */}
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer hover:bg-white/10 transition-all"
+            >
+              <Workflow className="w-5 h-5 text-zinc-400 hover:text-white transition-colors" />
+            </motion.div>
+            
+            {/* Spacer */}
+            <div className="flex-1" />
+            
+            {/* Settings */}
             <motion.div
               whileHover={{ scale: 1.1 }}
               className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer hover:bg-white/10 transition-all"
@@ -104,12 +134,12 @@ export const DashboardPreview = () => {
             >
               <div className="relative z-10">
                 <div className="flex items-center gap-2 mb-2">
-                  <Activity className="w-4 h-4 text-purple-400" />
+                  <Activity className="w-4 h-4 text-emerald-400" />
                   <span className="text-xs text-zinc-400 uppercase tracking-wider font-mono">Neural Network Load</span>
                 </div>
                 <div className="text-4xl font-mono text-white mb-1">98.7%</div>
                 <div className="text-xs font-mono text-zinc-500 mb-4">
-                  Token Usage: <span className="text-purple-400">450k/s</span>
+                  Token Usage: <span className="text-emerald-400">450k/s</span>
                 </div>
                 
                 {/* Spectrum Heatmap */}
@@ -123,7 +153,7 @@ export const DashboardPreview = () => {
                         initial={{ height: 0 }}
                         animate={{ height: `${height}%` }}
                         transition={{ duration: 0.8, delay, ease: "easeOut" }}
-                        className="flex-1 bg-gradient-to-t from-purple-600 via-purple-500 to-cyan-400 rounded-t-[1px]"
+                        className="flex-1 bg-gradient-to-t from-emerald-400 to-teal-600 rounded-t-[1px]"
                         style={{
                           opacity: 0.6 + (height / 200),
                         }}
@@ -147,7 +177,7 @@ export const DashboardPreview = () => {
               <div className="space-y-1 font-mono text-xs">
                 {[
                   { time: "10:42:01", msg: "Iniciando negociação: Cliente #8821", color: "text-emerald-500" },
-                  { time: "10:42:02", msg: 'Intent detected: "Purchase_Anual"', color: "text-cyan-400" },
+                  { time: "10:42:02", msg: 'Intent detected: "Purchase_Anual"', color: "text-teal-400" },
                   { time: "10:42:05", msg: "Pix Code Generated... Success.", color: "text-emerald-500" },
                   { time: "10:42:08", msg: "Payment Confirmed. Access Granted.", color: "text-emerald-400" },
                 ].map((log, i) => (
@@ -172,19 +202,19 @@ export const DashboardPreview = () => {
               <div className="flex items-center justify-between h-full">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-3">
-                    <Server className="w-4 h-4 text-green-400" />
+                    <Server className="w-4 h-4 text-emerald-400" />
                     <span className="text-xs text-zinc-400 uppercase tracking-wider font-mono">Infrastructure Health</span>
                   </div>
                   <div className="space-y-2 text-xs font-mono">
                     <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
+                      <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
                       <span className="text-zinc-500">API Latency:</span>
-                      <span className="text-green-400">12ms</span>
+                      <span className="text-emerald-400">12ms</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
+                      <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
                       <span className="text-zinc-500">WhatsApp:</span>
-                      <span className="text-green-400">Stable</span>
+                      <span className="text-emerald-400">Stable</span>
                     </div>
                   </div>
                 </div>
