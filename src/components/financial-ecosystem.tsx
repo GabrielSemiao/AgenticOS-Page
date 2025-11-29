@@ -33,10 +33,7 @@ export const FinancialEcosystem = () => {
   ];
 
   return (
-    <section className="py-32 px-4 bg-[#050505] border-t border-zinc-900 relative overflow-hidden">
-      {/* Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-      
+    <section className="py-32 px-4 bg-transparent border-t border-zinc-900 relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,7 +49,6 @@ export const FinancialEcosystem = () => {
           </p>
         </motion.div>
 
-        {/* Connection Flow Indicator */}
         <motion.div
           initial={{ opacity: 0, scaleX: 0 }}
           whileInView={{ opacity: 1, scaleX: 1 }}
@@ -77,7 +73,6 @@ export const FinancialEcosystem = () => {
               transition={{ delay: index * 0.1 + 0.3 }}
               className="group relative"
             >
-              {/* Spotlight Effect on Hover */}
               <div className="absolute -inset-px rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-emerald-500/20 via-emerald-400/20 to-emerald-500/20 blur-sm"></div>
               
               <div
@@ -87,7 +82,6 @@ export const FinancialEcosystem = () => {
                     : "bg-zinc-950/50 border-zinc-800 opacity-50 group-hover:opacity-70"
                 }`}
               >
-                {/* Status Indicator */}
                 {integration.status === "active" ? (
                   <div className="absolute top-4 right-4 flex items-center gap-2">
                     <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
@@ -102,7 +96,6 @@ export const FinancialEcosystem = () => {
                   </Badge>
                 )}
 
-                {/* Card Content */}
                 <div className="p-6 h-full flex flex-col justify-between">
                   <div>
                     <h3 className={`text-2xl font-bold mb-2 ${
@@ -121,7 +114,6 @@ export const FinancialEcosystem = () => {
                     </p>
                   </div>
 
-                  {/* Connection Indicator */}
                   {integration.status === "active" && (
                     <div className="flex items-center gap-2">
                       <div className="flex-1 h-px bg-gradient-to-r from-emerald-500/50 to-transparent"></div>
@@ -130,7 +122,6 @@ export const FinancialEcosystem = () => {
                   )}
                 </div>
 
-                {/* Glow Effect for Active Card */}
                 {integration.status === "active" && (
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.05),transparent_70%)] rounded-xl pointer-events-none"></div>
                 )}
@@ -139,7 +130,6 @@ export const FinancialEcosystem = () => {
           ))}
         </motion.div>
 
-        {/* System Status */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -153,41 +143,6 @@ export const FinancialEcosystem = () => {
             <span className="text-emerald-400 text-sm font-light">Sistema de pagamento operacional</span>
           </div>
         </motion.div>
-
-        {/* Animated Connection Lines */}
-        <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none opacity-20" style={{ maxWidth: '1200px' }}>
-          <motion.line
-            x1="50%"
-            y1="20%"
-            x2="25%"
-            y2="50%"
-            stroke="url(#gradient1)"
-            strokeWidth="1"
-            initial={{ pathLength: 0 }}
-            whileInView={{ pathLength: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, delay: 0.5 }}
-          />
-          <motion.line
-            x1="50%"
-            y1="20%"
-            x2="75%"
-            y2="50%"
-            stroke="url(#gradient1)"
-            strokeWidth="1"
-            initial={{ pathLength: 0 }}
-            whileInView={{ pathLength: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, delay: 0.7 }}
-          />
-          <defs>
-            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="rgba(16,185,129,0)" />
-              <stop offset="50%" stopColor="rgba(16,185,129,0.5)" />
-              <stop offset="100%" stopColor="rgba(16,185,129,0)" />
-            </linearGradient>
-          </defs>
-        </svg>
       </div>
     </section>
   );

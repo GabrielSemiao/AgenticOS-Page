@@ -10,10 +10,9 @@ export const SecuritySection = () => {
   ];
 
   return (
-    <section className="py-32 px-4 bg-[#050505] border-t border-zinc-900">
+    <section className="py-32 px-4 bg-transparent border-t border-zinc-900">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Texto */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -55,7 +54,6 @@ export const SecuritySection = () => {
             </div>
           </motion.div>
 
-          {/* Right Column - Visual Abstrato */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -64,11 +62,8 @@ export const SecuritySection = () => {
             className="relative flex justify-center"
           >
             <div className="relative w-full max-w-md">
-              {/* Card Principal com Glassmorphism */}
               <div className="relative bg-zinc-900/50 backdrop-blur-xl border border-emerald-500/20 rounded-2xl p-12 shadow-[0_0_50px_rgba(16,185,129,0.15)]">
-                {/* Grid de Ícones */}
                 <div className="grid grid-cols-3 gap-8">
-                  {/* Lock Icon */}
                   <motion.div
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
@@ -81,7 +76,6 @@ export const SecuritySection = () => {
                     </div>
                   </motion.div>
 
-                  {/* Server Icon */}
                   <motion.div
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
@@ -94,7 +88,6 @@ export const SecuritySection = () => {
                     </div>
                   </motion.div>
 
-                  {/* Key Icon */}
                   <motion.div
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
@@ -107,7 +100,6 @@ export const SecuritySection = () => {
                     </div>
                   </motion.div>
 
-                  {/* Shield Central (Maior) */}
                   <motion.div
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
@@ -121,14 +113,11 @@ export const SecuritySection = () => {
                   </motion.div>
                 </div>
 
-                {/* Efeito de Rede Brilhante */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.1),transparent_50%)] rounded-2xl pointer-events-none"></div>
               </div>
 
-              {/* Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/10 to-transparent blur-3xl -z-10 scale-110"></div>
 
-              {/* Floating Particles */}
               <motion.div
                 animate={{
                   y: [0, -10, 0],

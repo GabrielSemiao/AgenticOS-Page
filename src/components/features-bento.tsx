@@ -5,7 +5,7 @@ import { Brain, DollarSign, Calendar, QrCode, Zap } from "lucide-react";
 
 export const FeaturesBento = () => {
   return (
-    <section className="py-32 px-4 bg-[#050505]">
+    <section className="py-32 px-4 bg-transparent">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -22,7 +22,6 @@ export const FeaturesBento = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* Card Principal - Cérebro de Vendas (Largo) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +47,6 @@ export const FeaturesBento = () => {
             </div>
           </motion.div>
 
-          {/* Card Vertical - Caixa Automático (Alto) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +74,6 @@ export const FeaturesBento = () => {
             </div>
           </motion.div>
 
-          {/* Card Padrão - Agenda Blindada */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -97,7 +94,6 @@ export const FeaturesBento = () => {
             </p>
           </motion.div>
 
-          {/* Card Padrão - Instalação Rápida */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

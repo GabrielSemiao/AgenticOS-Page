@@ -36,7 +36,6 @@ export const LiveDemo = () => {
       setIsTyping(false);
 
       if (indexRef.current < conversation.length) {
-        // Aguarda uma pausa entre mensagens e inicia nova digitação
         const gapId = window.setTimeout(() => scheduleNext(1500), 2000);
         timeoutsRef.current.push(gapId);
       }
@@ -45,7 +44,6 @@ export const LiveDemo = () => {
   };
 
   useEffect(() => {
-    // start: pequena espera e inicia a primeira digitação
     const startId = window.setTimeout(() => scheduleNext(1500), 500);
     timeoutsRef.current.push(startId);
 
@@ -56,10 +54,9 @@ export const LiveDemo = () => {
   }, []);
 
   return (
-    <section className="py-32 px-4 bg-gradient-to-b from-transparent via-purple-950/5 to-transparent">
+    <section className="py-32 px-4 bg-transparent">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Texto Explicativo */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -99,7 +96,6 @@ export const LiveDemo = () => {
             </div>
           </motion.div>
 
-          {/* Right Column - iPhone Mockup */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -108,14 +104,10 @@ export const LiveDemo = () => {
             className="flex justify-center"
           >
             <div className="relative">
-              {/* iPhone Frame */}
               <div className="w-[320px] h-[650px] bg-zinc-950 rounded-[3rem] border-[14px] border-zinc-900 shadow-2xl relative overflow-hidden">
-                {/* Notch */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-zinc-950 rounded-b-3xl z-10"></div>
 
-                {/* WhatsApp Interface */}
                 <div className="h-full flex flex-col bg-[#0A0A0A]">
-                  {/* Header */}
                   <div className="bg-gradient-to-r from-green-600/90 to-green-700/90 backdrop-blur-sm p-4 pt-8 flex items-center gap-3 border-b border-green-800/30">
                     <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white font-semibold text-sm">
                       AI
@@ -126,7 +118,6 @@ export const LiveDemo = () => {
                     </div>
                   </div>
 
-                  {/* Messages Area */}
                   <div
                     className="flex-1 p-4 space-y-3 overflow-y-auto"
                     style={{
@@ -172,7 +163,6 @@ export const LiveDemo = () => {
                 </div>
               </div>
 
-              {/* Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-b from-green-500/20 to-purple-500/20 blur-3xl -z-10 scale-110"></div>
             </div>
           </motion.div>

@@ -4,7 +4,7 @@ import { ContainerScroll } from "@/components/ui/container-scroll";
 
 export const DashboardReveal = () => {
   return (
-    <div className="bg-[#050505]">
+    <div className="bg-transparent">
       <ContainerScroll
         titleComponent={
           <div className="flex flex-col gap-4">

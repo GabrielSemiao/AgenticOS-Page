@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 export const FinalCTA = () => {
   return (
-    <section className="py-32 px-4 bg-gradient-to-t from-purple-950/10 via-purple-950/5 to-transparent">
+    <section className="py-32 px-4 bg-transparent">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
