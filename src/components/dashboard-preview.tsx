@@ -5,7 +5,7 @@ import { Home, BarChart3, Settings, TrendingUp, Users, Zap, CheckCircle2 } from 
 
 export const DashboardPreview = () => {
   return (
-    <div className="w-full h-full bg-black/60 backdrop-blur-xl rounded-[3rem] border border-white/10 ring-1 ring-white/5 inset shadow-[0_0_80px_-20px_rgba(124,58,237,0.6)] overflow-hidden">
+    <div className="w-full h-full bg-transparent backdrop-blur-[100px] rounded-[3rem] ring-1 ring-white/10 ring-inset shadow-[0_0_120px_-30px_rgba(139,92,246,0.6)] overflow-hidden">
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:14px_14px]" />
       
