@@ -1,5 +1,7 @@
 "use client";
 
+import { Link } from "react-router-dom";
+
 export const EnterpriseFooter = () => {
   const currentYear = new Date().getFullYear();
 
@@ -20,9 +22,9 @@ export const EnterpriseFooter = () => {
             <a href="#" className="hover:text-white transition-colors">
               Documentation
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <Link to="/privacy" className="hover:text-white transition-colors">
               Privacy
-            </a>
+            </Link>
             <a href="#" className="hover:text-white transition-colors">
               Terms
             </a>
