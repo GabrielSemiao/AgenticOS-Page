@@ -6,6 +6,7 @@ import { LiveDemo } from "@/components/live-demo";
 import { FeaturesBento } from "@/components/features-bento";
 import { Pricing } from "@/components/pricing";
 import { FinancialEcosystem } from "@/components/financial-ecosystem";
+import { SecuritySection } from "@/components/security-section";
 import { EnterpriseFooter } from "@/components/enterprise-footer";
 
 const Index = () => {
@@ -17,6 +18,7 @@ const Index = () => {
       <FeaturesBento />
       <Pricing />
       <FinancialEcosystem />
+      <SecuritySection />
       <EnterpriseFooter />
     </div>
   );
