@@ -10,11 +10,13 @@ export const Pricing = () => {
       name: "Explorer",
       price: "197",
       period: "/mês",
-      description: "O Básico",
+      description: "Para validar e começar a lucrar.",
       features: [
-        "Agente de Vendas Básico",
-        "Integração Pix",
-        "Suporte por Email",
+        "1 Agente Autônomo (WhatsApp)",
+        "Checkout Automático (Pix & Links)",
+        "Treinamento Básico (Até 2 arquivos PDF)",
+        "Agendamento Google Calendar",
+        "Suporte Humano WhatsApp (Horário Comercial)",
       ],
       popular: false,
       whatsappLink: "https://wa.me/5565999746140?text=Ol%C3%A1!%20Vi%20o%20site%20e%20tenho%20interesse%20no%20Plano%20Mensal%20(Explorer)%20do%20AgenticOS.",
@@ -26,12 +28,13 @@ export const Pricing = () => {
       originalPrice: "2.364",
       period: "/ano",
       installments: "12x de R$ 189,00",
-      description: "O No-Brainer",
+      description: "Infraestrutura completa para escalar.",
       features: [
-        "Tudo do Explorer",
-        "Prioridade na Fila de Processamento",
-        "Treinamento Personalizado do Agente",
-        "Suporte WhatsApp VIP",
+        "Tudo do plano Explorer",
+        "Cérebro Ilimitado (Upload de múltiplos PDFs/Docs)",
+        "Latência Zero (Fila de Processamento Prioritária)",
+        "Onboarding Guiado (Call de Configuração)",
+        "Suporte WhatsApp VIP (Fura-fila)",
       ],
       popular: true,
       badge: "MAIS POPULAR",
@@ -115,7 +118,7 @@ export const Pricing = () => {
                     }`}>
                       <Check className={`w-3 h-3 ${plan.popular ? "text-purple-400" : "text-zinc-400"}`} />
                     </div>
-                    <span className="text-zinc-300 font-light">{feature}</span>
+                    <span className="text-zinc-300 font-light leading-relaxed">{feature}</span>
                   </div>
                 ))}
               </div>
