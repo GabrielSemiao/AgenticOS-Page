@@ -7,7 +7,7 @@ import { ArrowRight, Play } from "lucide-react";
 
 export const EnterpriseHero = () => {
   return (
-    <div className="h-svh w-full relative flex flex-col items-center justify-center antialiased bg-neutral-900 overflow-hidden">
+    <div className="h-svh w-full relative flex flex-col items-center justify-center antialiased bg-black overflow-hidden">
       {/* Content - Z-20 */}
       <div className="relative z-20 flex flex-col items-center gap-8 text-center px-6 md:px-4 pointer-events-none">
         <motion.h1
@@ -55,6 +55,9 @@ export const EnterpriseHero = () => {
           </Button>
         </motion.div>
       </div>
+
+      {/* Gradient Mask - Smooth transition to next section */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black via-black to-transparent z-10 pointer-events-none" />
 
       {/* Background Beams - Z-0 (Last element for proper rendering) */}
       <BackgroundBeams />

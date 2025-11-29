@@ -13,7 +13,7 @@ import { EnterpriseFooter } from "@/components/enterprise-footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-[#050505] text-white font-light">
+    <div className="min-h-screen bg-black text-white font-light">
       <EnterpriseHero />
       <DashboardReveal />
       <LiveDemo />
