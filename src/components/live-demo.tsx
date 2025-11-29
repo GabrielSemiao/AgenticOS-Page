@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { CheckCheck } from "lucide-react";
+import { CheckCheck, Zap, CreditCard, Unlock } from "lucide-react";
 
 type ChatMessage = { text: string; isBot: boolean; time: string };
 
@@ -54,7 +54,7 @@ export const LiveDemo = () => {
   }, []);
 
   return (
-    <section className="py-32 px-4 bg-transparent">
+    <section className="py-32 px-4 bg-transparent relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -66,10 +66,10 @@ export const LiveDemo = () => {
           >
             <div>
               <h2 className="text-4xl md:text-5xl font-light text-white mb-6 tracking-tight">
-                Ele vende melhor que seu melhor funcionário.
+                Do "Oi" ao "Dinheiro na Conta" em segundos.
               </h2>
               <p className="text-lg text-zinc-400 font-light leading-relaxed">
-                O Agente reconhece o cliente, entende a intenção de compra, negocia valores e envia o link de pagamento. Tudo em segundos.
+                O cliente clica no anúncio, cai no WhatsApp e o AgenticOS faz todo o resto. Negocia, vende e entrega. Sem intervenção humana.
               </p>
             </div>
 
@@ -101,8 +101,87 @@ export const LiveDemo = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex justify-center"
+            className="flex justify-center relative"
           >
+            {/* Card 1 - Quebra de Objeções (Top Left) */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+              className="absolute -left-8 top-20 z-20 hidden lg:block"
+            >
+              <div className="relative">
+                {/* Connection Line */}
+                <svg className="absolute left-full top-1/2 w-24 h-1" style={{ transform: 'translateY(-50%)' }}>
+                  <line x1="0" y1="0" x2="96" y2="0" stroke="#7c3aed" strokeWidth="1" strokeDasharray="4 4" />
+                </svg>
+                
+                <div className="bg-black/60 backdrop-blur-md border border-purple-500/30 rounded-lg p-4 w-48">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Zap className="w-4 h-4 text-purple-400" />
+                    <h4 className="text-sm font-mono text-purple-400">Quebra de Objeções</h4>
+                  </div>
+                  <p className="text-xs text-zinc-400 font-light leading-relaxed">
+                    IA identifica resistência e usa gatilhos mentais.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card 2 - Checkout Nativo (Right Middle) */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.8 }}
+              className="absolute -right-8 top-1/2 -translate-y-1/2 z-20 hidden lg:block"
+            >
+              <div className="relative">
+                {/* Connection Line */}
+                <svg className="absolute right-full top-1/2 w-24 h-1" style={{ transform: 'translateY(-50%)' }}>
+                  <line x1="0" y1="0" x2="96" y2="0" stroke="#06b6d4" strokeWidth="1" strokeDasharray="4 4" />
+                </svg>
+                
+                <div className="bg-black/60 backdrop-blur-md border border-cyan-500/30 rounded-lg p-4 w-48">
+                  <div className="flex items-center gap-2 mb-2">
+                    <CreditCard className="w-4 h-4 text-cyan-400" />
+                    <h4 className="text-sm font-mono text-cyan-400">Checkout Nativo</h4>
+                  </div>
+                  <p className="text-xs text-zinc-400 font-light leading-relaxed">
+                    Gera código Pix e valida pagamento em tempo real.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card 3 - Entrega Instantânea (Bottom Left) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 1.0 }}
+              className="absolute -left-8 bottom-20 z-20 hidden lg:block"
+            >
+              <div className="relative">
+                {/* Connection Line */}
+                <svg className="absolute left-full top-1/2 w-24 h-1" style={{ transform: 'translateY(-50%)' }}>
+                  <line x1="0" y1="0" x2="96" y2="0" stroke="#10b981" strokeWidth="1" strokeDasharray="4 4" />
+                </svg>
+                
+                <div className="bg-black/60 backdrop-blur-md border border-green-500/30 rounded-lg p-4 w-48">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Unlock className="w-4 h-4 text-green-400" />
+                    <h4 className="text-sm font-mono text-green-400">Entrega Instantânea</h4>
+                  </div>
+                  <p className="text-xs text-zinc-400 font-light leading-relaxed">
+                    O sistema libera acesso/login no mesmo segundo.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Phone Mockup */}
             <div className="relative">
               <div className="w-[320px] h-[650px] bg-zinc-950 rounded-[3rem] border-[14px] border-zinc-900 shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-zinc-950 rounded-b-3xl z-10"></div>
