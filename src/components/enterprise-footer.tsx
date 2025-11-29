@@ -19,9 +19,9 @@ export const EnterpriseFooter = () => {
           </div>
 
           <div className="flex gap-8 text-sm text-zinc-500 font-light">
-            <a href="#" className="hover:text-white transition-colors">
+            <Link to="/documentation" className="hover:text-white transition-colors">
               Documentation
-            </a>
+            </Link>
             <Link to="/privacy" className="hover:text-white transition-colors">
               Privacy
             </Link>
