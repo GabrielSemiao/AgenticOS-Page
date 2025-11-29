@@ -8,6 +8,7 @@ import { FAQSection } from "@/components/faq-section";
 import { Pricing } from "@/components/pricing";
 import { FinancialEcosystem } from "@/components/financial-ecosystem";
 import { SecuritySection } from "@/components/security-section";
+import { FinalCTA } from "@/components/final-cta";
 import { EnterpriseFooter } from "@/components/enterprise-footer";
 
 const Index = () => {
@@ -21,6 +22,7 @@ const Index = () => {
       <Pricing />
       <FinancialEcosystem />
       <SecuritySection />
+      <FinalCTA />
       <EnterpriseFooter />
     </div>
   );
