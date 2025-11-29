@@ -25,9 +25,9 @@ export const EnterpriseFooter = () => {
             <Link to="/privacy" className="hover:text-white transition-colors">
               Privacy
             </Link>
-            <a href="#" className="hover:text-white transition-colors">
+            <Link to="/terms" className="hover:text-white transition-colors">
               Terms
-            </a>
+            </Link>
           </div>
         </div>
 
