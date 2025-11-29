@@ -56,7 +56,7 @@ export const EnterpriseHero = () => {
             className="text-white border-white/30 hover:bg-white/5 hover:border-white/50 rounded-sm px-8 py-6 text-base font-medium transition-all duration-300"
           >
             <a
-              href="https://wa.me/5565999746141?text=Ol%C3%A1!%20Gostaria%20de%20ver%20uma%20demonstra%C3%A7%C3%A3o%20do%20AgenticOS%20funcionando."
+              href="https://wa.me/5565999746140?text=Ol%C3%A1!%20Gostaria%20de%20ver%20uma%20demonstra%C3%A7%C3%A3o%20do%20AgenticOS%20funcionando."
               target="_blank"
               rel="noopener noreferrer"
             >

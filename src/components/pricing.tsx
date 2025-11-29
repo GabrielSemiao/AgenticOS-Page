@@ -17,7 +17,7 @@ export const Pricing = () => {
         "Suporte por Email",
       ],
       popular: false,
-      whatsappLink: "https://wa.me/5565999746141?text=Ol%C3%A1!%20Vi%20o%20site%20e%20tenho%20interesse%20no%20Plano%20Mensal%20(Explorer)%20do%20AgenticOS.",
+      whatsappLink: "https://wa.me/5565999746140?text=Ol%C3%A1!%20Vi%20o%20site%20e%20tenho%20interesse%20no%20Plano%20Mensal%20(Explorer)%20do%20AgenticOS.",
       buttonText: "Começar Mensal",
     },
     {
@@ -36,7 +36,7 @@ export const Pricing = () => {
       popular: true,
       badge: "MAIS POPULAR",
       savings: "Economia de R$ 467/ano",
-      whatsappLink: "https://wa.me/5565999746141?text=Ol%C3%A1!%20Quero%20aproveitar%20a%20oferta%20do%20Plano%20Anual%20(Enterprise)%20com%20desconto.",
+      whatsappLink: "https://wa.me/5565999746140?text=Ol%C3%A1!%20Quero%20aproveitar%20a%20oferta%20do%20Plano%20Anual%20(Enterprise)%20com%20desconto.",
       buttonText: "Quero Escalar Agora",
     },
   ];
