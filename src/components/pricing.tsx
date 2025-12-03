@@ -25,11 +25,11 @@ export const Pricing = () => {
       buttonText: "Começar Mensal",
     },
     {
-      name: "Enterprise Pro",
-      price: "1.897",
-      originalPrice: "2.364",
-      period: "/ano",
-      installments: "12x de R$ 189,00",
+      name: "Enterprise (Semestral)",
+      price: "897",
+      originalPrice: "1.182",
+      period: "/semestre",
+      equivalentMonthly: "Equivalente a apenas R$ 149/mês",
       transactionFee: "+ 2.5% por venda realizada via Pix",
       description: "Infraestrutura completa para escalar.",
       features: [
@@ -43,8 +43,8 @@ export const Pricing = () => {
       ],
       popular: true,
       badge: "MAIS POPULAR",
-      savings: "Economia de R$ 467/ano",
-      whatsappLink: "https://wa.me/5565999746140?text=Ol%C3%A1!%20Quero%20aproveitar%20a%20oferta%20do%20Plano%20Anual%20(Enterprise)%20com%20desconto.",
+      savings: "Economize R$ 285 a cada 6 meses",
+      whatsappLink: "https://wa.me/5565999746141?text=Ol%C3%A1!%20Quero%20aproveitar%20o%20Plano%20Semestral%20de%20R$%20897%20com%20desconto.",
       buttonText: "Quero Escalar Agora",
     },
   ];
@@ -110,8 +110,10 @@ export const Pricing = () => {
                   <span className="text-zinc-400">{plan.period}</span>
                 </div>
                 
-                {plan.installments && (
-                  <p className="text-zinc-500 text-sm mt-2">{plan.installments}</p>
+                {plan.equivalentMonthly && (
+                  <p className="text-emerald-400 text-base font-medium mt-3">
+                    {plan.equivalentMonthly}
+                  </p>
                 )}
 
                 {/* Transaction Fee */}
