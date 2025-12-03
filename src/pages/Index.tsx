@@ -18,31 +18,31 @@ const Index = () => {
     {
       company: "STONE",
       role: "Vendas B2B e Escala",
-      avatar: "S",
+      logo: "/logos/stone.svg",
       text: "Nossa força de vendas é gigantesca. O AgenticOS automatizou a qualificação inicial de leads no WhatsApp, permitindo que nossos agentes humanos foquem apenas no fechamento. O CAC caiu 35%.",
     },
     {
       company: "QuintoAndar",
       role: "Agendamento e Burocracia",
-      avatar: "Q",
+      logo: "/logos/quintoandar.svg",
       text: "O pesadelo do 'conflito de agenda' acabou. A sincronização nativa com o Google Calendar permitiu agendar 4x mais visitas sem nenhum erro humano. A gestão de chaves nunca foi tão simples.",
     },
     {
       company: "Hotmart",
       role: "Infoprodutos e Checkout",
-      avatar: "H",
+      logo: "/logos/hotmart.svg",
       text: "Para lançamentos de 7 dígitos, velocidade é tudo. O checkout nativo dentro do WhatsApp aumentou a conversão de boletos em 60%. O dinheiro cai na conta em tempo real.",
     },
     {
       company: "Reserva",
       role: "Varejo e Personalidade",
-      avatar: "R",
+      logo: "/logos/Reserva.svg",
       text: "O maior medo era perder o 'tom de voz' humano da Reserva. A IA do AgenticOS aprendeu nossa cultura em minutos e atende o cliente com a mesma irreverência dos nossos vendedores.",
     },
     {
       company: "Loggi",
       role: "Infraestrutura e Escala",
-      avatar: "L",
+      logo: "/logos/Loggi.svg",
       text: "Precisávamos de uma infraestrutura que aguentasse picos de Black Friday sem cair. O AgenticOS processou 50 mil mensagens por minuto com latência zero. Infraestrutura de nível global.",
     },
   ];
