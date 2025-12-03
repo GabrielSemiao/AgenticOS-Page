@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const EnterpriseHero = () => {
   const scrollToPricing = () => {
@@ -48,21 +48,6 @@ export const EnterpriseHero = () => {
           >
             Iniciar Operação Agora
             <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            asChild
-            className="text-white border-white/30 hover:bg-white/5 hover:border-white/50 rounded-sm px-8 py-6 text-base font-medium transition-all duration-300"
-          >
-            <a
-              href="https://wa.me/5565999746140?text=Ol%C3%A1!%20Gostaria%20de%20ver%20uma%20demonstra%C3%A7%C3%A3o%20do%20AgenticOS%20funcionando."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Play className="mr-2 w-5 h-5" />
-              Ver o Agente Vendendo
-            </a>
           </Button>
         </motion.div>
       </div>
