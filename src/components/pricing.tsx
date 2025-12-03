@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Check, Sparkles } from "lucide-react";
+import { Check } from "lucide-react";
 
 export const Pricing = () => {
   const plans = [
@@ -42,7 +42,6 @@ export const Pricing = () => {
         "Suporte WhatsApp VIP (Fura-fila)",
       ],
       popular: true,
-      badge: "MAIS POPULAR",
       savings: "Economize R$ 285 a cada 6 meses",
       whatsappLink: "https://wa.me/5565999746141?text=Ol%C3%A1!%20Quero%20aproveitar%20o%20Plano%20Semestral%20de%20R$%20897%20com%20desconto.",
       buttonText: "Quero Escalar Agora",
@@ -79,15 +78,6 @@ export const Pricing = () => {
                   : "bg-zinc-900/50 border border-white/10"
               }`}
             >
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-purple-600 to-purple-500 text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center gap-1 shadow-lg">
-                    <Sparkles className="w-4 h-4" />
-                    {plan.badge}
-                  </div>
-                </div>
-              )}
-
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-light text-white mb-2 tracking-tight">{plan.name}</h3>
                 <p className="text-zinc-500 text-sm mb-6">{plan.description}</p>
