@@ -11,24 +11,24 @@ import {
 export const FAQSection = () => {
   const faqs = [
     {
-      question: "Isso pode bloquear meu número de WhatsApp?",
+      question: "Preciso ter conta no Mercado Pago ou outro banco?",
       answer:
-        "Não. O AgenticOS utiliza a API Oficial ou emuladores de alta fidelidade com aquecimento de chip automático, reduzindo o risco de bloqueio a quase zero.",
+        "Não. O AgenticOS cria uma carteira digital para você automaticamente. Todo o dinheiro das vendas cai direto no seu painel e você saca para sua conta PF ou PJ quando quiser.",
     },
     {
-      question: "Preciso saber programar para configurar?",
+      question: "Quais são as taxas por venda?",
       answer:
-        "Zero código. Você conecta seu WhatsApp lendo um QR Code (igual ao WhatsApp Web) e nosso sistema configura o resto em 2 minutos.",
+        "Cobramos apenas 2.5% sobre o valor da venda (com um mínimo de R$ 1,50 por transação). Sem mensalidades extras de gateway e sem taxas escondidas.",
     },
     {
-      question: "O Agente sabe responder sobre meus produtos específicos?",
+      question: "Quanto tempo demora para eu sacar o dinheiro?",
       answer:
-        "Sim. Você faz o upload de um PDF ou texto com suas informações e a IA 'aprende' tudo sobre sua empresa instantaneamente.",
+        "O processamento é instantâneo. Assim que o cliente paga o Pix no WhatsApp, o valor fica disponível na sua carteira AgenticOS (D+0) ou conforme regra de segurança padrão.",
     },
     {
-      question: "E se eu não gostar?",
+      question: "É seguro deixar meu dinheiro com vocês?",
       answer:
-        "Garantia incondicional de 7 dias. Se o sistema não lucrar para você, devolvemos 100% do seu dinheiro.",
+        "Sim. Utilizamos infraestrutura bancária regulamentada pelo Banco Central. Seu saldo fica segregado e protegido.",
     },
   ];
 
