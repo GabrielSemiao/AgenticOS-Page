@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 interface Testimonial {
   company: string;
   role: string;
-  logo: string;
+  avatar: string;
   text: string;
 }
 
@@ -20,11 +20,9 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
     <div className="flex-shrink-0 w-[400px] mx-4">
       <div className="bg-zinc-900/40 backdrop-blur-md border border-white/10 rounded-xl p-6 h-full">
         <div className="mb-4">
-          <img 
-            src={testimonial.logo} 
-            alt={`${testimonial.company} logo`}
-            className="h-8 md:h-10 w-auto object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2"
-          />
+          <h4 className="text-white font-black text-2xl tracking-tight uppercase mb-1">
+            {testimonial.company}
+          </h4>
           <p className="text-zinc-400 text-sm font-light">{testimonial.role}</p>
         </div>
         <p className="text-zinc-300 font-light leading-relaxed">
