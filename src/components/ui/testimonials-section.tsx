@@ -27,7 +27,9 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
             </AvatarFallback>
           </Avatar>
           <div>
-            <h4 className="text-white font-medium">{testimonial.company}</h4>
+            <h4 className="text-white font-black text-lg tracking-tight uppercase">
+              {testimonial.company}
+            </h4>
             <p className="text-zinc-400 text-sm font-light">{testimonial.role}</p>
           </div>
         </div>
