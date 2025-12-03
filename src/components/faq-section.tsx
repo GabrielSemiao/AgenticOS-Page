@@ -11,24 +11,29 @@ import {
 export const FAQSection = () => {
   const faqs = [
     {
-      question: "Preciso ter conta no Mercado Pago ou outro banco?",
+      question: "O Agente realmente substitui um funcionário humano?",
       answer:
-        "Não. O AgenticOS cria uma carteira digital para você automaticamente. Todo o dinheiro das vendas cai direto no seu painel e você saca para sua conta PF ou PJ quando quiser.",
+        "Sim. O AgenticOS trabalha 24/7, responde instantaneamente e segue scripts de vendas complexos. Ele não fica doente, não tira folgas e gerencia centenas de clientes simultaneamente sem perder a paciência.",
     },
     {
-      question: "Quais são as taxas por venda?",
+      question: "Isso pode bloquear meu número de WhatsApp?",
       answer:
-        "Cobramos apenas 2.5% sobre o valor da venda (com um mínimo de R$ 1,50 por transação). Sem mensalidades extras de gateway e sem taxas escondidas.",
+        "Nossa infraestrutura utiliza emulação de comportamento humano e aquecimento de chip, reduzindo drasticamente o risco de bloqueios. Operamos dentro das diretrizes da API oficial sempre que possível.",
     },
     {
-      question: "Quanto tempo demora para eu sacar o dinheiro?",
+      question: "Como funciona o recebimento das vendas?",
       answer:
-        "O processamento é instantâneo. Assim que o cliente paga o Pix no WhatsApp, o valor fica disponível na sua carteira AgenticOS (D+0) ou conforme regra de segurança padrão.",
+        "É tudo nativo. O Agente gera o Pix, o cliente paga e o dinheiro cai instantaneamente na sua carteira AgenticOS. Cobramos apenas uma taxa operacional de 2.5% sobre o sucesso. Sem mensalidades de gateway.",
     },
     {
-      question: "É seguro deixar meu dinheiro com vocês?",
+      question: "Preciso deixar meu computador ligado?",
       answer:
-        "Sim. Utilizamos infraestrutura bancária regulamentada pelo Banco Central. Seu saldo fica segregado e protegido.",
+        "Não. O AgenticOS roda 100% na nuvem (Cloud Enterprise). Você escaneia o QR Code uma vez e pode desligar seu celular ou computador que o sistema continua vendendo.",
+    },
+    {
+      question: "E se eu não gostar do resultado?",
+      answer:
+        "Garantia Blindada de 7 Dias. Se o Agente não colocar dinheiro no seu bolso na primeira semana, devolvemos 100% do valor da sua assinatura. O risco é todo nosso.",
     },
   ];
 
