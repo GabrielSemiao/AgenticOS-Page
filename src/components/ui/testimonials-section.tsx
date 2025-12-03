@@ -23,7 +23,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
           <img 
             src={testimonial.logo} 
             alt={`${testimonial.company} logo`}
-            className="h-8 w-auto md:h-10 brightness-0 invert opacity-70 hover:opacity-100 transition-opacity mb-2"
+            className="h-8 md:h-10 w-auto object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2"
           />
           <p className="text-zinc-400 text-sm font-light">{testimonial.role}</p>
         </div>
