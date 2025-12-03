@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { TypeAnimation } from "react-type-animation";
 
 export const EnterpriseHero = () => {
   const scrollToPricing = () => {
@@ -40,9 +41,24 @@ export const EnterpriseHero = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="text-4xl sm:text-6xl md:text-9xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 uppercase leading-[0.9]"
         >
-          Sua Empresa.
-          <br />
-          100% Autônoma.
+          <TypeAnimation
+            sequence={[
+              'Sua Empresa.\n100% Autônoma.',
+              2000,
+              'Sua Empresa.\n100% Eficiente.',
+              2000,
+              'Sua Empresa.\n100% Imparável.',
+              2000,
+              'Sua Empresa.\n100% Lucrativa.',
+              2000,
+            ]}
+            wrapper="span"
+            speed={50}
+            deletionSpeed={70}
+            repeat={Infinity}
+            cursor={true}
+            style={{ whiteSpace: 'pre-line' }}
+          />
         </motion.h1>
 
         <motion.p
