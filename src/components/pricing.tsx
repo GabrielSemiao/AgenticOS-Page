@@ -10,10 +10,12 @@ export const Pricing = () => {
       name: "Explorer",
       price: "197",
       period: "/mês",
+      transactionFee: "+ 2.5% por venda realizada via Pix",
       description: "Para validar e começar a lucrar.",
       features: [
         "1 Agente Autônomo (WhatsApp)",
-        "Checkout Automático (Pix & Links)",
+        "Gateway Nativo (Recebimento Imediato)",
+        "Sem taxa de adesão ou setup bancário",
         "Treinamento Básico (Até 2 arquivos PDF)",
         "Agendamento Google Calendar",
         "Suporte Humano WhatsApp (Horário Comercial)",
@@ -28,9 +30,12 @@ export const Pricing = () => {
       originalPrice: "2.364",
       period: "/ano",
       installments: "12x de R$ 189,00",
+      transactionFee: "+ 2.5% por venda realizada via Pix",
       description: "Infraestrutura completa para escalar.",
       features: [
         "Tudo do plano Explorer",
+        "Gateway Nativo (Recebimento Imediato)",
+        "Sem taxa de adesão ou setup bancário",
         "Cérebro Ilimitado (Upload de múltiplos PDFs/Docs)",
         "Latência Zero (Fila de Processamento Prioritária)",
         "Onboarding Guiado (Call de Configuração)",
@@ -108,6 +113,11 @@ export const Pricing = () => {
                 {plan.installments && (
                   <p className="text-zinc-500 text-sm mt-2">{plan.installments}</p>
                 )}
+
+                {/* Transaction Fee */}
+                <p className="text-sm text-zinc-400 mt-3 font-light">
+                  {plan.transactionFee}
+                </p>
               </div>
 
               <div className="space-y-4 mb-8">
