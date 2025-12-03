@@ -6,7 +6,7 @@ import { LiveDemo } from "@/components/live-demo";
 import { FeaturesBento } from "@/components/features-bento";
 import { FAQSection } from "@/components/faq-section";
 import { Pricing } from "@/components/pricing";
-import { FinancialEcosystem } from "@/components/financial-ecosystem";
+import { NativeWalletSection } from "@/components/native-wallet-section";
 import { SecuritySection } from "@/components/security-section";
 import { FinalCTA } from "@/components/final-cta";
 import { EnterpriseFooter } from "@/components/enterprise-footer";
@@ -32,7 +32,7 @@ const Index = () => {
         <FeaturesBento />
         <FAQSection />
         <Pricing />
-        <FinancialEcosystem />
+        <NativeWalletSection />
         <SecuritySection />
         <FinalCTA />
         <EnterpriseFooter />
