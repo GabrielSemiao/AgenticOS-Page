@@ -25,7 +25,7 @@ export const Pricing = () => {
       buttonText: "Começar Mensal",
     },
     {
-      name: "Enterprise (Semestral)",
+      name: "Enterprise",
       price: "897",
       originalPrice: "1.182",
       period: "/semestre",
