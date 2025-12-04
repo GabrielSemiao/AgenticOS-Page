@@ -51,7 +51,7 @@ export const EnterpriseHero = () => {
           transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="text-base md:text-xl text-zinc-400 max-w-xs sm:max-w-xl md:max-w-3xl leading-relaxed"
         >
-          Não contrate mais funcionários, instale o AgenticOS. O único Sistema Operacional com Banco Digital Nativo que negocia, vende e processa pagamentos via Pix no WhatsApp 24/7.
+          Não contrate mais funcionários, instale o AgenticOS. O único Agente de IA com Banco Digital Nativo que negocia, vende e processa pagamentos via Pix no WhatsApp 24/7.
         </motion.p>
 
         <motion.div
